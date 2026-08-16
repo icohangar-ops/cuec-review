@@ -2,7 +2,7 @@
 
 > **Cubiczan stack** — [CHP](https://github.com/Cubiczan/consensus-hardening-protocol) · [control-spine](https://github.com/Cubiczan/control-spine) · **You are here:** `cuec-review`
 
-**SOC 1 / CUEC review workflow.** The complementary user-entity controls in a service auditor's report have to be extracted, assigned to a named owner, mapped to an internal control, and evidenced for the period the SOC actually covers. Most close teams never do this step. XWELL named it. Patriot National's third-party / digital-payments weakness sits next to it.
+**SOC 1 / CUEC review workflow.** The complementary user-entity controls in a service auditor's report have to be extracted, assigned to a named owner, mapped to an internal control, and evidenced for the period the SOC actually covers. Most close teams never do this step. It is a recurring third-party / service-org finding on listed-company 10-Qs.
 
 This is not a PDF parser and not `agent-governance`. Extraction is an input. The engine tests whether the register is complete enough to be evidence.
 

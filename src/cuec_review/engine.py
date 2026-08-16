@@ -1,9 +1,8 @@
 """SOC 1 / CUEC review engine.
 
-This is the control XWELL and Patriot National named and that agent-governance
-does not cover: complementary user-entity controls in a SOC report have to be
-extracted, owned, mapped to an internal control, and evidenced for the period
-the SOC actually covers.
+Complementary user-entity controls in a SOC report have to be extracted,
+owned, mapped to an internal control, and evidenced for the period the SOC
+actually covers. agent-governance does not cover this step.
 
 The engine does not parse a PDF. Extraction is a documented input. The engine
 tests whether the register is complete enough to be evidence.

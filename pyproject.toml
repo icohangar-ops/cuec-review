@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cuec-review"
+version = "0.1.0"
+description = "SOC 1 / CUEC review workflow: vendor register, complementary user-entity controls, expiry calendar, evidence pack."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Cubiczan", email = "sam@cubiczan.com" }]
+license = { text = "MIT" }
+keywords = ["soc1", "cuec", "icfr", "third-party", "audit-trail"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+cuec-review = "cuec_review.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

@@ -1,0 +1,25 @@
+{
+  "reports": [
+    {
+      "vendor_id": "ADP",
+      "vendor_name": "ADP",
+      "report_type": "SOC 1 Type 2",
+      "period_start": "2025-07-01",
+      "period_end": "2026-06-30",
+      "opinion": "unqualified",
+      "bridge_letter_through": null,
+      "exceptions": []
+    }
+  ],
+  "cuecs": [
+    {
+      "cuec_id": "CUEC-1",
+      "vendor_id": "ADP",
+      "description": "User entity reviews payroll change reports each period",
+      "owner": "Controller",
+      "mapped_internal_control": "IC-PAY-04",
+      "status": "evidenced",
+      "evidence_ref": "workpaper/2026-06-payroll-changes.pdf"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+Vendored from control-spine. Canonical source of truth: ../control-spine
+Do not edit this copy. Change the canonical package, then re-vendor.

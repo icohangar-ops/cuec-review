@@ -36,6 +36,8 @@ cuec-review examples/register.json \
   --period-label "H1 2026" --owner "Controller"
 ```
 
+UiPath can emit the same `reports` + `cuecs` JSON register shape and hand it to this CLI without any parser changes.
+
 Exit code 2 when the spine is `PROVISIONAL_LOCK` or `HALT` — typically a named owner on a pack that still has CUEC or coverage gaps. Unsigned exploration is `EXPLORING` (exit 0) and is **not evidence**. Only `LOCKED` is evidence.
 
 ## Compliance spine

@@ -7,7 +7,7 @@ network, and SOC report text stays a documented input (the engine does not
 parse PDFs).
 
 Follows the same publishing path proven by invoice-audit-engine /
-codesentinel: namespace ``io.github.Cubiczan``, stdio transport, published
+codesentinel: namespace ``io.github.icohangar-ops/cuec-review``, stdio transport, published
 via the ``mcp-publisher`` CLI.
 
 Run it:

@@ -19,6 +19,7 @@ def evidence_pack(
     result: ReviewResult,
     period_label: str,
     owner: str,
+    invoked_via: str | None = None,
 ) -> dict:
     pack = {
         "control_id": "ICFR-CUEC-01",
@@ -72,6 +73,8 @@ def evidence_pack(
     blocking = tuple(
         Finding(f.code, f.message, blocking=True) for f in result.findings
     )
+    if invoked_via is not None:
+        pack["invoked_via"] = invoked_via
     return seal(
         pack,
         engine_id=ENGINE_ID,

@@ -11,10 +11,11 @@ requires-python = ">=3.10"
 authors = [{ name = "Cubiczan", email = "sam@cubiczan.com" }]
 license = { text = "MIT" }
 keywords = ["soc1", "cuec", "icfr", "third-party", "audit-trail"]
-dependencies = ["mcp>=1.2,<2"]
+dependencies = []
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
+mcp = ["mcp>=1.2,<2"]
 
 [project.scripts]
 cuec-review = "cuec_review.cli:main"

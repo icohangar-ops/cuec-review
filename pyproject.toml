@@ -11,13 +11,14 @@ requires-python = ">=3.10"
 authors = [{ name = "Cubiczan", email = "sam@cubiczan.com" }]
 license = { text = "MIT" }
 keywords = ["soc1", "cuec", "icfr", "third-party", "audit-trail"]
-dependencies = []
+dependencies = ["mcp>=1.2,<2"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
 
 [project.scripts]
 cuec-review = "cuec_review.cli:main"
+cuec-review-mcp = "cuec_review.mcp_server:main"
 
 [tool.setuptools]
 package-dir = { "" = "src" }

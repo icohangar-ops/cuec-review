@@ -43,3 +43,13 @@ Exit code 2 when the spine is `PROVISIONAL_LOCK` or `HALT` — typically a named
 ## Compliance spine
 
 Vendored `control-spine`. Open findings are blocking: they cannot reach `LOCKED`. A controller who signs a gap pack gets `PROVISIONAL_LOCK`, not a clean opinion.
+
+## MCP server
+
+`src/cuec_review/mcp_server.py` publishes the engine over Model Context Protocol: a thin wrapper in the `io.github.Cubiczan` namespace (stdio transport) whose tools — `review_register` and `cuec_evidence_pack` — call `cuec_review.engine` and `cuec_review.evidence` verbatim. All review logic lives in the engine module; the wrapper adds no logic, touches no network, and keeps SOC report text a documented input — the engine still does not parse PDFs.
+
+```bash
+uvx --from cuec-review cuec-review-mcp
+# or from a checkout:
+python -m cuec_review.mcp_server
+```

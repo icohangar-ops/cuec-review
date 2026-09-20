@@ -12,9 +12,9 @@ via the ``mcp-publisher`` CLI.
 
 Run it:
 
-    uvx --from cuec-review cuec-review-mcp
+    uvx --from 'cuec-review[mcp]' cuec-review-mcp
     # or, from a checkout:
-    python -m cuec_review.mcp_server
+    uv run --with 'mcp>=1.2,<2' --with . python -m cuec_review.mcp_server
 """
 
 from __future__ import annotations

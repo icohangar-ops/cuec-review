@@ -46,7 +46,7 @@ Vendored `control-spine`. Open findings are blocking: they cannot reach `LOCKED`
 
 ## MCP server
 
-`src/cuec_review/mcp_server.py` publishes the engine over Model Context Protocol: a thin wrapper in the `io.github.Cubiczan` namespace (stdio transport) whose tools — `review_register` and `cuec_evidence_pack` — call `cuec_review.engine` and `cuec_review.evidence` verbatim. All review logic lives in the engine module; the wrapper adds no logic, touches no network, and keeps SOC report text a documented input — the engine still does not parse PDFs.
+`src/cuec_review/mcp_server.py` publishes the engine over Model Context Protocol: a thin wrapper in the `io.github.Cubiczan` namespace (stdio transport) whose tools — `review_register` and `cuec_evidence_pack` — call `cuec_review.engine` and `cuec_review.evidence` verbatim. All review logic lives in the engine module; the wrapper adds no logic, touches no network, and keeps SOC report text a documented input — the engine still does not parse PDFs. Evidence packs built through MCP are always unsigned — the tool takes no owner, so the spine renders `EXPLORING` and `is_evidence: false`; a named human signs via the CLI (`--owner`), never through MCP.
 
 ```bash
 uvx --from cuec-review cuec-review-mcp

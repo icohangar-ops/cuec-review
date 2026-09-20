@@ -71,7 +71,10 @@ def test_expired_soc_surfaces_the_exception_via_mcp() -> None:
 
 def test_evidence_pack_pins_population() -> None:
     pack = mcp_server.cuec_evidence_pack(
-        _register(), **_ARGS, period_label="H1 2026", owner="Controller"
+        _register(), **_ARGS, period_label="H1 2026"
     )
     assert pack["population_count"] == 1
+    assert pack["lock_state"] == "EXPLORING"
+    assert pack["is_evidence"] is False
+    assert pack["invoked_via"] == "mcp"
     assert pack["open_gaps"] == 0

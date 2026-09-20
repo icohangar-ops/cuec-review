@@ -118,7 +118,6 @@ def cuec_evidence_pack(
     period_start: str,
     period_end: str,
     period_label: str = "",
-    owner: str = "",
 ) -> dict[str, Any]:
     """Build the SOC/CUEC evidence pack a tester can reperform without the source code.
 
@@ -132,13 +131,17 @@ def cuec_evidence_pack(
         period_start: ISO date the entity reporting period starts.
         period_end: ISO date the entity reporting period ends.
         period_label: Close period label; defaults to "<start> to <end>".
-        owner: Named owner for sign-off. Must not be the engine.
+        Sign-off: MCP never accepts an owner — packs built here are always
+        unsigned (EXPLORING, not evidence). A named human signs via the CLI
+        (--owner), never through MCP.
     """
     reports, cuecs = _register_from_dict(register)
     result = review(reports, cuecs, date.fromisoformat(as_of),
                     date.fromisoformat(period_start), date.fromisoformat(period_end))
     label = period_label or f"{period_start} to {period_end}"
-    return _jsonify(evidence_pack(reports, cuecs, result, label, owner))
+    pack = evidence_pack(reports, cuecs, result, label, "")
+    pack["invoked_via"] = "mcp"
+    return _jsonify(pack)
 
 
 def main() -> None:

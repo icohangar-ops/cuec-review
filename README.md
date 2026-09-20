@@ -51,5 +51,5 @@ Vendored `control-spine`. Open findings are blocking: they cannot reach `LOCKED`
 ```bash
 uvx --from 'cuec-review[mcp]' cuec-review-mcp
 # or from a checkout:
-uv run --with 'mcp<2' --with . python -m cuec_review.mcp_server
+uv run --with 'mcp>=1.2,<2' --with . python -m cuec_review.mcp_server
 ```

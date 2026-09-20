@@ -139,8 +139,7 @@ def cuec_evidence_pack(
     result = review(reports, cuecs, date.fromisoformat(as_of),
                     date.fromisoformat(period_start), date.fromisoformat(period_end))
     label = period_label or f"{period_start} to {period_end}"
-    pack = evidence_pack(reports, cuecs, result, label, "")
-    pack["invoked_via"] = "mcp"
+    pack = evidence_pack(reports, cuecs, result, label, "", invoked_via="mcp")
     return _jsonify(pack)
 
 
